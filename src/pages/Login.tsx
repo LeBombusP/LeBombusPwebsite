@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Login() {
   const navigate = useNavigate()
@@ -12,6 +13,7 @@ function Login() {
     e.preventDefault();
     const user = username;
     const pass = password;
+    console.log("login started");
     
     axios.post('http://localhost:8080/api/login', {
       username: user,
@@ -32,7 +34,7 @@ function Login() {
 
   };
   return (
-    <div className='App'>
+    <motion.div className='App' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
       <h1 className='text-center text-5xl font-bold'>Login</h1>
       <div className='flex justify-center'>
         <form onSubmit={handleSubmit}>
@@ -41,7 +43,7 @@ function Login() {
           <button className='border-2 rounded p-2 m-2 bg-gray-900' type='submit'>{message}</button>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
 //TODO: Style the login page properly

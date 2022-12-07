@@ -2,13 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaMoon, FaSun, FaUserCircle } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 import '../assets/app.css';
 
 
-
-function App() { 
-  
+function NavIcons() {
   const [dark, setDark] = useState(false);
   const navigate = useNavigate();
 
@@ -43,19 +40,15 @@ function App() {
       </div>
     )
   }
+
   return (
-    <motion.div className='App' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
-    <main>
-      <div className="page">
-      <button className="imgct licon" onClick={href}>
-        <FaUserCircle className="Icon" size={42} />
-      </button>
-      {Icon()}
-      <h1 className="lebombusp">LeBombusP</h1>
-      </div>
-    </main>
-    </motion.div>
+    <div className="page">
+    <button className="imgct licon" onClick={href}>
+      <FaUserCircle className="Icon" size={42} />
+    </button>
+    {Icon()}
+    </div>
   )
 }
-// TODO: Get Icons to components as navbar 
-export default App;
+
+export default NavIcons;

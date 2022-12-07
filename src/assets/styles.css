@@ -7,9 +7,33 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  place-items: center;
+  transition: all .8;
 }
+
+body.light-mode {
+  background: rgb(225, 234, 240);
+  background: linear-gradient(300deg, rgb(216, 219, 222) 0%, rgba(188,216,232,.5) 100%);
+  transition: all .8;
+  color: black;
+}
+
+body * {
+  transition: all .8;
+}
+
 h1 {
   margin-top: 1.5em;
   font-size: 3.5em;
   text-align: center;
+}
+
+.preload {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }

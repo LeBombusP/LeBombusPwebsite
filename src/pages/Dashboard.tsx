@@ -1,16 +1,14 @@
-import { useState } from "react";
+import { motion } from 'framer-motion';
 
 function Dashboard() {
-  let [token, setToken] = useState("");
-  localStorage.getItem("token") ? setToken(localStorage.getItem("token")) : setToken("No token");
   return (
-    <div>
+    <motion.div className='App' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
       <h1>Dashboard</h1>
-      <h2>{token}</h2>
-    </div>
-    //TODO: Fetch DBD codes
-    //TODO: Make dashboard look nice, add a logout button 
+    </motion.div>
   );
+  //TODO: Fetch DBD codes
+  //TODO: Make dashboard look nice, add a logout button 
+  //TODO: Fix it so it works
 }
 
 export default Dashboard;
