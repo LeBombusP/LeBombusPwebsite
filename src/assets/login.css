@@ -1,3 +1,3 @@
-body.light-mode * button {
+body.light-mode * button, body.light-mode * input {
   color: white;
 }

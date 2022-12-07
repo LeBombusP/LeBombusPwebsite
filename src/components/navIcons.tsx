@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaMoon, FaSun, FaUserCircle } from 'react-icons/fa';
+import { FaMoon, FaSun, FaUserCircle, FaHome, FaSignOutAlt } from 'react-icons/fa';
 import '../assets/app.css';
 
 
-function NavIcons() {
-  const [dark, setDark] = useState(false);
+function NavIcons(props) {
+  const [dark, setDark] = useState(props.dark);
   const navigate = useNavigate();
 
   const toggle = () => {
@@ -17,16 +17,21 @@ function NavIcons() {
       setDark(true);
     }
   }
-
-  const href = () => {
-    navigate('/dashboard');
+  
+  const href = (to) => {
+    navigate(to);
   }
+  const out = () => {
+    localStorage.removeItem('token');
+  }
+
 
   useEffect(() => {
     document.body.classList.toggle('light-mode');
+    localStorage.setItem('dark', dark.toString());
   }, [dark]);
 
-  function Icon() {
+  const Icon = (dark) => {
     if (dark) {
       return (
         <div className="imgct ricon" onClick={() => toggle()}>
@@ -41,13 +46,35 @@ function NavIcons() {
     )
   }
 
+  const Link = (link) => {
+    if (link=="/dashboard") {
+      return (
+        <button className="imgct licon" onClick={() => href('/dashboard')}>
+          <FaUserCircle className="Icon" size={42} />
+        </button>
+      )
+    }
+    else if (link=="/") {
+      return (
+        <button className="imgct licon" onClick={() => href('/')}>
+          <FaHome className="Icon" size={42} />
+        </button>
+      )
+    }
+    else if (link=="out") {
+      return (
+        <button className="imgct licon" onClick={out}>
+          <FaSignOutAlt className="Icon" size={42} />
+        </button>
+      )
+    }
+  }
+
   return (
-    <div className="page">
-    <button className="imgct licon" onClick={href}>
-      <FaUserCircle className="Icon" size={42} />
-    </button>
-    {Icon()}
-    </div>
+    <>
+      {Link(props.link)}
+      {Icon(dark)}
+    </>
   )
 }
 

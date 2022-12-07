@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   </React.StrictMode>
 );
 //TODO: Make theme context
+//TODO: move backend to a separate branch
 //TODO: Make a proper 404 page
 //TODO: Fix spaghetti code by using typescript
 //TODO: Make prettier work properly

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import PrivateRoute from "../components/authguard";
+import PrivateRoute from "./authguard";
 
 import App from "../pages/App";
 import Login from "../pages/Login";

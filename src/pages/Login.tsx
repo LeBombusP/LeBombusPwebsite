@@ -2,12 +2,16 @@ import { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import NavIcons from '../components/navIcons';
+import '../assets/login.css';
 
 function Login() {
   const navigate = useNavigate()
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('Login');
+  const dark: boolean = localStorage.getItem('dark') === 'true';
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +39,8 @@ function Login() {
   };
   return (
     <motion.div className='App' initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
-      <h1 className='text-center text-5xl font-bold'>Login</h1>
+      <NavIcons dark={dark} link={"/"} />
+      <h1 className='text-center text-6xl font-bold py-12 pt-20 mt-0'>Login</h1>
       <div className='flex justify-center'>
         <form onSubmit={handleSubmit}>
           <input className='rounded bg-gray-900 border-2 m-2 p-1' type='text' id='username' placeholder='username' value={username} onChange={e => setUsername(e.target.value)} required />

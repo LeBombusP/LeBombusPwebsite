@@ -34,8 +34,8 @@ h1.lebombusp {
   font-size: calc(10vw + 10px);
   font-weight: 500;
   padding: 20px;
-  padding-top: 0;
-  margin-top: 5vh;
+  padding-top: 4vh;
+  margin-top: 0;
   text-align: center;
   background: linear-gradient(
   to right,
