@@ -14,7 +14,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     </Router>
   </React.StrictMode>
 );
-//TODO: Make favicon
 //TODO: Make theme context
 //TODO: Make a proper 404 page
 //TODO: Fix spaghetti code by using typescript
