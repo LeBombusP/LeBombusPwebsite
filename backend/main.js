@@ -9,9 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "",
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASSWORD,
     database: "react-app_db"
 });
 db.connect();
