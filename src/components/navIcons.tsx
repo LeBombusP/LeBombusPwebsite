@@ -13,7 +13,7 @@ function NavIcons(props) {
     if (dark) {
       setDark(false);
     }
-    else {
+    else if (!dark) {
       setDark(true);
     }
   }
@@ -25,10 +25,12 @@ function NavIcons(props) {
     localStorage.removeItem('token');
   }
 
-
   useEffect(() => {
     document.body.classList.toggle('light-mode');
     localStorage.setItem('dark', dark.toString());
+    if (!dark && !document.body.classList.contains('light-mode')) {
+      document.body.classList.toggle('light-mode');
+    }
   }, [dark]);
 
   const Icon = (dark) => {
