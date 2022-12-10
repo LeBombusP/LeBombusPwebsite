@@ -61,5 +61,3 @@ app.post("/api/check", (req, res) => {
 app.listen(8080, () => {
     console.log('server running at 8080');
 });
-
-

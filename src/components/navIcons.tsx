@@ -23,6 +23,7 @@ function NavIcons(props) {
   }
   const out = () => {
     localStorage.removeItem('token');
+    navigate('/');
   }
 
   useEffect(() => {
