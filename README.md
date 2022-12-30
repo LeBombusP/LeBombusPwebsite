@@ -10,6 +10,7 @@ Current branch is even more of a mess but it's still better than the old ones (i
 2. Run `npm install`
 3. Run `npm run dev`
 4. Go to `127.0.0.1:5173`
+Or just go to [lebombusp.com](https://lebombusp.com)
 
 ### Current branch is far from production ready
-But i will deploy it soon anyway.
+But it's deployed anyway.

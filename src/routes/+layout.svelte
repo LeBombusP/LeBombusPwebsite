@@ -4,6 +4,13 @@
   };
 </script>
 
+<svelte:head>
+  <title>LeBombusP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="robots" content="noindex" />
+</svelte:head>
+
 <nav>
   <button on:click={darkMode}>DarkMode</button>
 	<a class="no-underline" href="/">Home</a>
