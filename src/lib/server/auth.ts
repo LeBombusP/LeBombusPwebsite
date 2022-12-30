@@ -1,6 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit';
 import { JWT_KEY } from '$env/static/private';
-import { verify } from 'jsonwebtoken';
+import verify from 'jsonwebtoken';
 
 export const authenticateUser = (event: RequestEvent) => {
 	const userToken: string = event.cookies.get('token') ?? '';

@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { JWT_KEY, USER_LOGIN, USER_PASSWORD } from '$env/static/private';
-import { sign } from 'jsonwebtoken';
+import sign from 'jsonwebtoken';
 
 export const POST: RequestHandler = async ({ request }) => {
 	request.headers.set('Content-Type', 'application/json');
