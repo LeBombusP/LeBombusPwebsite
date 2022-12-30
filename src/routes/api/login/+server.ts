@@ -1,13 +1,13 @@
 import type { RequestHandler } from './$types';
 import { JWT_KEY, USER_LOGIN, USER_PASSWORD } from '$env/static/private';
-import * as jwtlib from 'jsonwebtoken';
+import jsonwebtoken from 'jsonwebtoken';
+const { sign } = jsonwebtoken;
 
 export const POST: RequestHandler = async ({ request }) => {
 	request.headers.set('Content-Type', 'application/json');
 	const user = await request.json();
 	const username: string = user.username;
 	const password: string = user.password;
-
 	let statusMsg: string;
 
 	if (username !== USER_LOGIN) {
@@ -29,7 +29,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	}
 
 	const expireInSeconds = 4 * 60 * 60;
-	const jwt: string = jwtlib.sign({ username: username }, JWT_KEY, { expiresIn: expireInSeconds });
+	const jwt: string = sign({ username: username }, JWT_KEY, { expiresIn: expireInSeconds });
 	statusMsg = 'Login successful';
 
 	console.log('|api/login| => ' + statusMsg);
