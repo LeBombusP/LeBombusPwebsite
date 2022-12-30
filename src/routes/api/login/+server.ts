@@ -1,6 +1,6 @@
 import type { RequestHandler } from './$types';
 import { JWT_KEY, USER_LOGIN, USER_PASSWORD } from '$env/static/private';
-import sign from 'jsonwebtoken';
+import * as jwtlib from 'jsonwebtoken';
 
 export const POST: RequestHandler = async ({ request }) => {
 	request.headers.set('Content-Type', 'application/json');
@@ -29,7 +29,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	}
 
 	const expireInSeconds = 4 * 60 * 60;
-	const jwt: string = sign({ username: username }, JWT_KEY, { expiresIn: expireInSeconds });
+	const jwt: string = jwtlib.sign({ username: username }, JWT_KEY, { expiresIn: expireInSeconds });
 	statusMsg = 'Login successful';
 
 	console.log('|api/login| => ' + statusMsg);
