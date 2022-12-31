@@ -1,7 +1,11 @@
 <script lang="ts">
+  import '../app.css'
+
   const darkMode = () => {
-    document.body.classList.toggle('dark-mode');
-  };
+    document.body.classList.toggle('dark');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark').toString());
+  }
+
 </script>
 
 <svelte:head>
@@ -31,7 +35,7 @@
     background-color: hsl(208, 95%, 100%);
     transition: all 0.25s;
   }
-  :global(body.dark-mode) {
+  :global(body.dark) {
 		background-color: hsl(240, 15%, 15%);
 		color: hsl(220, 10%, 75%);
 	}

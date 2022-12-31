@@ -28,8 +28,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		});
 	}
 
-	const expireInSeconds = 4 * 60 * 60;
-	const jwt: string = sign({ username: username }, JWT_KEY, { expiresIn: expireInSeconds });
+	const expireInSeconds = 20 * 60 * 60;
+	const jwt: string = sign({ username: username, password: password }, JWT_KEY);
 	statusMsg = 'Login successful';
 
 	console.log('|api/login| => ' + statusMsg);
