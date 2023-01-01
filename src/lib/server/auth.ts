@@ -3,7 +3,6 @@ import { JWT_KEY } from '$env/static/private';
 import jsonwebtoken from 'jsonwebtoken';
 const { verify } = jsonwebtoken;
 
-
 export const authenticateUser = (event: RequestEvent) => {
 	const userToken: string = event.cookies.get('token') ?? '';
 	console.log('|lib/server/auth| => jwt = ' + userToken);

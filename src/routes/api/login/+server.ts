@@ -38,8 +38,10 @@ export const POST: RequestHandler = async ({ request }) => {
 			message: 'Login successful',
 			jwt,
 			expiresIn: expireInSeconds
-		}), {
+		}),
+		{
 			status: 200,
 			headers: { 'Content-Type': 'application/json' }
-		});
+		}
+	);
 };

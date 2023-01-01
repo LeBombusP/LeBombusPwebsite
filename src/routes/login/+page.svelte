@@ -19,10 +19,10 @@
 			})
 		});
 
-		const msg = await response.json()
-		
+		const msg = await response.json();
+
 		if (response.ok) {
-			console.log("|routes/login| => " + msg);
+			console.log('|routes/login| => ' + msg);
 			const date = new Date();
 			date.setTime(date.getTime() + msg.expiresIn * 1000);
 			let expires = date.toUTCString();
@@ -34,7 +34,6 @@
 		setTimeout(() => {
 			errorMessage = '';
 		}, 3000);
-
 	};
 </script>
 
@@ -47,14 +46,14 @@
 	{/if}
 </form> -->
 
-<h1 class='text-center text-6xl font-bold py-12 pt-20 mt-0'>Login</h1>
-<div class='flex justify-center'>
+<h1 class="text-center text-6xl font-bold py-12 pt-20 mt-0">Login</h1>
+<div class="flex justify-center">
 	<form on:submit={handleSubmit}>
 		{#if errorMessage}
 			<p>{errorMessage}</p>
 		{/if}
-		<input class='rounded bg-gray-900 border-2 m-2 p-1' type='text' id='username' placeholder='username' bind:value={username} required />
-		<input class='rounded bg-gray-900 border-2 m-2 p-1' type='password' id='password' placeholder='password' bind:value={password} required />
+		<input class="rounded bg-gray-900 border-2 m-2 p-1" type="text" id="username" placeholder="username" bind:value={username} required />
+		<input class="rounded bg-gray-900 border-2 m-2 p-1" type="password" id="password" placeholder="password" bind:value={password} required />
 		<button type="submit">Login</button>
 	</form>
 </div>
