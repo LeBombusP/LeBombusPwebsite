@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"jsonwebtoken": "^9.0.0"
+		"jsonwebtoken": "^9.0.0",
+		"svelte-icons-pack": "^2.0.0"
 	}
 }

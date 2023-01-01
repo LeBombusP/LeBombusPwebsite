@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import { goto } from '$app/navigation';
 
 	let username: string = '';
@@ -39,11 +38,23 @@
 	};
 </script>
 
-<form on:submit={handleSubmit}>
+<!-- <form on:submit={handleSubmit}>
 	<input type="text" bind:value={username} />
 	<input type="password" bind:value={password} />
 	<button type="submit">Login</button>
 	{#if errorMessage}
 		<p>{errorMessage}</p>
 	{/if}
-</form>
+</form> -->
+
+<h1 class='text-center text-6xl font-bold py-12 pt-20 mt-0'>Login</h1>
+<div class='flex justify-center'>
+	<form on:submit={handleSubmit}>
+		{#if errorMessage}
+			<p>{errorMessage}</p>
+		{/if}
+		<input class='rounded bg-gray-900 border-2 m-2 p-1' type='text' id='username' placeholder='username' bind:value={username} required />
+		<input class='rounded bg-gray-900 border-2 m-2 p-1' type='password' id='password' placeholder='password' bind:value={password} required />
+		<button type="submit">Login</button>
+	</form>
+</div>
