@@ -1,9 +1,9 @@
 # LeBombusP Website
 
-My simple websirte made with React then ported to Svelte then remade in React (again) and then remade again in SvelteKit.
+My simple website made with React then ported to Svelte then remade in React (again) and then remade again in SvelteKit.
 _I've had enough_
 
-## Old branches are avalible but i don't recommend looking at that code, it's a mess.
+## Old branches are available but i don't recommend looking at that code, it's a mess.
 
 Current branch is even more of a mess but it's still better than the old ones (if that makes sense).
 
