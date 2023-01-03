@@ -28,7 +28,7 @@
 			date.setTime(date.getTime() + msg.expiresIn * 1000);
 			let expires = date.toUTCString();
 			document.cookie = `token=${msg.jwt}; expires=${expires} path=/login;`;
-			goto('/dashboard');
+			return goto('/dashboard');
 		}
 
 		errorMessage = msg.message;
